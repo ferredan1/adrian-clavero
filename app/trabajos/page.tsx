@@ -18,58 +18,57 @@ export default function TrabajosPage() {
   const trabajos = [
     {
       id: 1,
-      title: "Limpieza de Desagües con Hidro Jet",
-      category: "hidrojet",
+      title: "Reparación de Cañería en Palermo",
+      category: "plomeria",
       location: "Palermo, CABA",
       date: "Febrero 2024",
-      description:
-        "Destapación de cañerías principales con equipo de alta presión. Raíces obstruían completamente el sistema.",
-      image: "/drain-root-removal.jpg",
+      description: "Se solucionó una pérdida importante sin necesidad de romper azulejos.",
+      image: "/bathroom-pipe-repair.jpg",
     },
     {
       id: 2,
-      title: "Instalación de Calefón",
+      title: "Instalación de Termotanque en Caballito",
       category: "gas",
-      location: "Villa Urquiza, CABA",
+      location: "Caballito, CABA",
       date: "Enero 2024",
-      description: "Instalación completa de calefón con certificación de gas y revisión de instalaciones existentes.",
+      description: "Instalación segura y certificada de nuevo termotanque a gas.",
       image: "/gas-water-heater-installation.jpg",
     },
     {
       id: 3,
-      title: "Reparación de Cañerías en Baño",
-      category: "plomeria",
+      title: "Destapación Cocina con Hidro Jet en Belgrano",
+      category: "hidrojet",
       location: "Belgrano, CABA",
       date: "Enero 2024",
-      description: "Renovación completa del sistema de cañerías del baño principal con materiales de primera calidad.",
-      image: "/bathroom-pipe-repair.jpg",
+      description: "Obstrucción severa por grasa. Limpieza profunda con equipo de alta presión.",
+      image: "/kitchen-drain-cleaning.jpg",
     },
     {
       id: 4,
-      title: "Renovación Completa de Cocina",
-      category: "plomeria",
-      location: "Recoleta, CABA",
+      title: "Destapación Pluvial en Flores",
+      category: "hidrojet",
+      location: "Flores, CABA",
       date: "Diciembre 2023",
-      description: "Instalación de nuevas cañerías, desagües y grifería en renovación integral de cocina.",
-      image: "/kitchen-plumbing-renovation.jpg",
+      description: "Raíces y sedimentos bloqueando el desagüe principal. Despejado con Hidro Jet.",
+      image: "/drain-root-removal.jpg",
     },
     {
       id: 5,
-      title: "Revisión de Instalación de Gas",
-      category: "gas",
-      location: "Caballito, CABA",
+      title: "Renovación de Plomería en Cocina - Núñez",
+      category: "plomeria",
+      location: "Núñez, CABA",
       date: "Diciembre 2023",
-      description: "Inspección completa de instalación de gas, detección de fuga menor y reparación certificada.",
-      image: "/gas-leak-inspection.jpg",
+      description: "Reemplazo completo de cañerías y grifería en cocina.",
+      image: "/kitchen-plumbing-renovation.jpg",
     },
     {
       id: 6,
-      title: "Destapación de Cocina",
-      category: "hidrojet",
-      location: "Núñez, CABA",
+      title: "Revisión y Reparación de Cañería de Gas - Villa Urquiza",
+      category: "gas",
+      location: "Villa Urquiza, CABA",
       date: "Noviembre 2023",
-      description: "Limpieza profunda de desagüe de cocina obstruido por grasa acumulada durante años.",
-      image: "/kitchen-drain-cleaning.jpg",
+      description: "Detectada y reparada una fuga en la instalación de gas natural.",
+      image: "/gas-leak-inspection.jpg",
     },
   ]
 
@@ -101,8 +100,7 @@ export default function TrabajosPage() {
                 Nuestros Trabajos Realizados
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 text-pretty leading-relaxed">
-                Más de 15 años de experiencia en plomería y gas. Cada trabajo refleja nuestro compromiso con la calidad
-                y satisfacción del cliente.
+                Casos reales de clientes satisfechos
               </p>
             </div>
           </div>
