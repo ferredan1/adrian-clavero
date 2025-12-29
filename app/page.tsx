@@ -690,21 +690,51 @@ export default function HomePage() {
                     color: "bg-accent text-accent-foreground",
                     hoverColor: "hover:!bg-accent hover:!text-accent-foreground"
                   },
-                ].map((filter) => (
-                  <Button
-                    key={filter.value}
-                    variant="outline"
-                    onClick={() => setPortfolioFilter(filter.value)}
-                    className={`transition-all duration-300 hover:scale-105 ${
-                      portfolioFilter === filter.value
-                        ? `${filter.color} ${filter.hoverColor} shadow-lg border-0`
-                        : "hover:border-accent/50"
-                    }`}
-                  >
-                    {filter.icon && <filter.icon className="h-4 w-4 mr-2" />}
-                    {filter.label}
-                  </Button>
-                ))}
+                ].map((filter) => {
+                  const getHoverStyle = () => {
+                    if (portfolioFilter !== filter.value) return {}
+                    switch (filter.value) {
+                      case "all":
+                        return { backgroundColor: "#475569", color: "#ffffff" }
+                      case "plomeria":
+                        return { backgroundColor: "var(--color-primary)", color: "var(--color-primary-foreground)" }
+                      case "gas":
+                        return { backgroundColor: "#ef4444", color: "#ffffff" }
+                      case "hidrojet":
+                        return { backgroundColor: "var(--color-accent)", color: "var(--color-accent-foreground)" }
+                      default:
+                        return {}
+                    }
+                  }
+                  return (
+                    <Button
+                      key={filter.value}
+                      variant="outline"
+                      onClick={() => setPortfolioFilter(filter.value)}
+                      style={getHoverStyle()}
+                      onMouseEnter={(e) => {
+                        if (portfolioFilter === filter.value) {
+                          const style = getHoverStyle()
+                          Object.assign(e.currentTarget.style, style)
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (portfolioFilter === filter.value) {
+                          const style = getHoverStyle()
+                          Object.assign(e.currentTarget.style, style)
+                        }
+                      }}
+                      className={`transition-all duration-300 hover:scale-105 ${
+                        portfolioFilter === filter.value
+                          ? `${filter.color} shadow-lg border-0`
+                          : "hover:border-accent/50"
+                      }`}
+                    >
+                      {filter.icon && <filter.icon className="h-4 w-4 mr-2" />}
+                      {filter.label}
+                    </Button>
+                  )
+                })}
               </div>
             </div>
 

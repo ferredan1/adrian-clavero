@@ -364,3 +364,24 @@ body {
   white-space: normal;
 }
 
+/* Fix para mantener colores específicos en hover de botones de filtro */
+button.bg-slate-600:hover {
+  background-color: #475569 !important;
+  color: #ffffff !important;
+}
+
+button.bg-primary:hover {
+  background-color: var(--color-primary) !important;
+  color: var(--color-primary-foreground) !important;
+}
+
+button.bg-red-500:hover {
+  background-color: #ef4444 !important;
+  color: #ffffff !important;
+}
+
+button.bg-accent:hover {
+  background-color: var(--color-accent) !important;
+  color: var(--color-accent-foreground) !important;
+}
+

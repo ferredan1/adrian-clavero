@@ -114,8 +114,21 @@ export default function TrabajosPage() {
               <Button
                 variant="outline"
                 onClick={() => setFilter("todos")}
+                style={filter === "todos" ? { backgroundColor: "#475569", color: "#ffffff" } : undefined}
+                onMouseEnter={(e) => {
+                  if (filter === "todos") {
+                    e.currentTarget.style.backgroundColor = "#475569"
+                    e.currentTarget.style.color = "#ffffff"
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (filter === "todos") {
+                    e.currentTarget.style.backgroundColor = "#475569"
+                    e.currentTarget.style.color = "#ffffff"
+                  }
+                }}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "todos" ? "bg-slate-600 text-white shadow-lg border-0 hover:!bg-slate-600 hover:!text-white" : ""
+                  filter === "todos" ? "shadow-lg border-0" : ""
                 }`}
               >
                 Todos los Trabajos
@@ -123,8 +136,21 @@ export default function TrabajosPage() {
               <Button
                 variant="outline"
                 onClick={() => setFilter("hidrojet")}
+                style={filter === "hidrojet" ? { backgroundColor: "var(--color-accent)", color: "var(--color-accent-foreground)" } : undefined}
+                onMouseEnter={(e) => {
+                  if (filter === "hidrojet") {
+                    e.currentTarget.style.backgroundColor = "var(--color-accent)"
+                    e.currentTarget.style.color = "var(--color-accent-foreground)"
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (filter === "hidrojet") {
+                    e.currentTarget.style.backgroundColor = "var(--color-accent)"
+                    e.currentTarget.style.color = "var(--color-accent-foreground)"
+                  }
+                }}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "hidrojet" ? "bg-accent text-accent-foreground shadow-lg border-0 hover:!bg-accent hover:!text-accent-foreground" : ""
+                  filter === "hidrojet" ? "shadow-lg border-0" : ""
                 }`}
               >
                 Hidro Jet
@@ -132,8 +158,21 @@ export default function TrabajosPage() {
               <Button
                 variant="outline"
                 onClick={() => setFilter("plomeria")}
+                style={filter === "plomeria" ? { backgroundColor: "var(--color-primary)", color: "var(--color-primary-foreground)" } : undefined}
+                onMouseEnter={(e) => {
+                  if (filter === "plomeria") {
+                    e.currentTarget.style.backgroundColor = "var(--color-primary)"
+                    e.currentTarget.style.color = "var(--color-primary-foreground)"
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (filter === "plomeria") {
+                    e.currentTarget.style.backgroundColor = "var(--color-primary)"
+                    e.currentTarget.style.color = "var(--color-primary-foreground)"
+                  }
+                }}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "plomeria" ? "bg-primary text-primary-foreground shadow-lg border-0 hover:!bg-primary hover:!text-primary-foreground" : ""
+                  filter === "plomeria" ? "shadow-lg border-0" : ""
                 }`}
               >
                 Plomería
@@ -141,8 +180,21 @@ export default function TrabajosPage() {
               <Button
                 variant="outline"
                 onClick={() => setFilter("gas")}
+                style={filter === "gas" ? { backgroundColor: "#ef4444", color: "#ffffff" } : undefined}
+                onMouseEnter={(e) => {
+                  if (filter === "gas") {
+                    e.currentTarget.style.backgroundColor = "#ef4444"
+                    e.currentTarget.style.color = "#ffffff"
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (filter === "gas") {
+                    e.currentTarget.style.backgroundColor = "#ef4444"
+                    e.currentTarget.style.color = "#ffffff"
+                  }
+                }}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "gas" ? "bg-red-500 text-white shadow-lg border-0 hover:!bg-red-500 hover:!text-white" : ""
+                  filter === "gas" ? "shadow-lg border-0" : ""
                 }`}
               >
                 Gas
