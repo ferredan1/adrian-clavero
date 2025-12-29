@@ -4,6 +4,7 @@ import { useState } from "react"
 import { SharedHeader } from "@/components/shared-header"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Button } from "@/components/ui/button"
+import { FilterButton } from "@/components/filter-button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
@@ -111,98 +112,38 @@ export default function TrabajosPage() {
         <section className="py-8 sm:py-12 border-b border-border">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
-              <Button
-                variant="outline"
+              <FilterButton
                 onClick={() => setFilter("todos")}
-                data-filter-active={filter === "todos" ? "todos" : undefined}
-                style={filter === "todos" ? { backgroundColor: "#475569", color: "#ffffff" } : undefined}
-                onMouseEnter={(e) => {
-                  if (filter === "todos") {
-                    e.currentTarget.style.setProperty('background-color', '#475569', 'important')
-                    e.currentTarget.style.setProperty('color', '#ffffff', 'important')
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (filter === "todos") {
-                    e.currentTarget.style.setProperty('background-color', '#475569', 'important')
-                    e.currentTarget.style.setProperty('color', '#ffffff', 'important')
-                  }
-                }}
-                className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "todos" ? "shadow-lg border-0 no-hover-accent" : ""
-                }`}
+                isActive={filter === "todos"}
+                activeColor="slate"
+                className="min-h-[44px] px-4 sm:px-6"
               >
                 Todos los Trabajos
-              </Button>
-              <Button
-                variant="outline"
+              </FilterButton>
+              <FilterButton
                 onClick={() => setFilter("hidrojet")}
-                data-filter-active={filter === "hidrojet" ? "hidrojet" : undefined}
-                style={filter === "hidrojet" ? { backgroundColor: "var(--color-accent)", color: "var(--color-accent-foreground)" } : undefined}
-                onMouseEnter={(e) => {
-                  if (filter === "hidrojet") {
-                    e.currentTarget.style.setProperty('background-color', 'var(--color-accent)', 'important')
-                    e.currentTarget.style.setProperty('color', 'var(--color-accent-foreground)', 'important')
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (filter === "hidrojet") {
-                    e.currentTarget.style.setProperty('background-color', 'var(--color-accent)', 'important')
-                    e.currentTarget.style.setProperty('color', 'var(--color-accent-foreground)', 'important')
-                  }
-                }}
-                className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "hidrojet" ? "shadow-lg border-0 no-hover-accent" : ""
-                }`}
+                isActive={filter === "hidrojet"}
+                activeColor="accent"
+                className="min-h-[44px] px-4 sm:px-6"
               >
                 Hidro Jet
-              </Button>
-              <Button
-                variant="outline"
+              </FilterButton>
+              <FilterButton
                 onClick={() => setFilter("plomeria")}
-                data-filter-active={filter === "plomeria" ? "plomeria" : undefined}
-                style={filter === "plomeria" ? { backgroundColor: "var(--color-primary)", color: "var(--color-primary-foreground)" } : undefined}
-                onMouseEnter={(e) => {
-                  if (filter === "plomeria") {
-                    e.currentTarget.style.setProperty('background-color', 'var(--color-primary)', 'important')
-                    e.currentTarget.style.setProperty('color', 'var(--color-primary-foreground)', 'important')
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (filter === "plomeria") {
-                    e.currentTarget.style.setProperty('background-color', 'var(--color-primary)', 'important')
-                    e.currentTarget.style.setProperty('color', 'var(--color-primary-foreground)', 'important')
-                  }
-                }}
-                className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "plomeria" ? "shadow-lg border-0 no-hover-accent" : ""
-                }`}
+                isActive={filter === "plomeria"}
+                activeColor="primary"
+                className="min-h-[44px] px-4 sm:px-6"
               >
                 Plomería
-              </Button>
-              <Button
-                variant="outline"
+              </FilterButton>
+              <FilterButton
                 onClick={() => setFilter("gas")}
-                data-filter-active={filter === "gas" ? "gas" : undefined}
-                style={filter === "gas" ? { backgroundColor: "#ef4444", color: "#ffffff" } : undefined}
-                onMouseEnter={(e) => {
-                  if (filter === "gas") {
-                    e.currentTarget.style.setProperty('background-color', '#ef4444', 'important')
-                    e.currentTarget.style.setProperty('color', '#ffffff', 'important')
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (filter === "gas") {
-                    e.currentTarget.style.setProperty('background-color', '#ef4444', 'important')
-                    e.currentTarget.style.setProperty('color', '#ffffff', 'important')
-                  }
-                }}
-                className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "gas" ? "shadow-lg border-0 no-hover-accent" : ""
-                }`}
+                isActive={filter === "gas"}
+                activeColor="red"
+                className="min-h-[44px] px-4 sm:px-6"
               >
                 Gas
-              </Button>
+              </FilterButton>
             </div>
           </div>
         </section>

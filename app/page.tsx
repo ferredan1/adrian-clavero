@@ -8,6 +8,7 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { FilterButton } from "@/components/filter-button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -691,52 +692,30 @@ export default function HomePage() {
                     hoverColor: "hover:!bg-accent hover:!text-accent-foreground"
                   },
                 ].map((filter) => {
-                  const getHoverStyle = () => {
-                    if (portfolioFilter !== filter.value) return {}
+                  const getActiveColor = () => {
                     switch (filter.value) {
                       case "all":
-                        return { backgroundColor: "#475569", color: "#ffffff" }
+                        return "slate" as const
                       case "plomeria":
-                        return { backgroundColor: "var(--color-primary)", color: "var(--color-primary-foreground)" }
+                        return "primary" as const
                       case "gas":
-                        return { backgroundColor: "#ef4444", color: "#ffffff" }
+                        return "red" as const
                       case "hidrojet":
-                        return { backgroundColor: "var(--color-accent)", color: "var(--color-accent-foreground)" }
+                        return "accent" as const
                       default:
-                        return {}
+                        return "primary" as const
                     }
                   }
                   return (
-                    <Button
+                    <FilterButton
                       key={filter.value}
-                      variant="outline"
                       onClick={() => setPortfolioFilter(filter.value)}
-                      data-filter-active={portfolioFilter === filter.value ? filter.value : undefined}
-                      data-filter-color={portfolioFilter === filter.value ? filter.value : undefined}
-                      style={getHoverStyle()}
-                      onMouseEnter={(e) => {
-                        if (portfolioFilter === filter.value) {
-                          const style = getHoverStyle()
-                          e.currentTarget.style.setProperty('background-color', style.backgroundColor || '', 'important')
-                          e.currentTarget.style.setProperty('color', style.color || '', 'important')
-                        }
-                      }}
-                      onMouseLeave={(e) => {
-                        if (portfolioFilter === filter.value) {
-                          const style = getHoverStyle()
-                          e.currentTarget.style.setProperty('background-color', style.backgroundColor || '', 'important')
-                          e.currentTarget.style.setProperty('color', style.color || '', 'important')
-                        }
-                      }}
-                      className={`transition-all duration-300 hover:scale-105 ${
-                        portfolioFilter === filter.value
-                          ? `${filter.color} shadow-lg border-0 no-hover-accent`
-                          : "hover:border-accent/50"
-                      }`}
+                      isActive={portfolioFilter === filter.value}
+                      activeColor={getActiveColor()}
                     >
                       {filter.icon && <filter.icon className="h-4 w-4 mr-2" />}
                       {filter.label}
-                    </Button>
+                    </FilterButton>
                   )
                 })}
               </div>
