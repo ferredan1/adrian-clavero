@@ -185,7 +185,7 @@ export default function ServiciosPage() {
                 { title: "Trabajos de Albañilería", desc: "Complementarios a plomería" },
               ].map((service, index) => (
                 <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 text-center">
                     <div className="flex items-center justify-center mb-3">
                       <Wrench className="h-8 w-8 text-primary" />
                     </div>
@@ -238,7 +238,7 @@ export default function ServiciosPage() {
                 { title: "Conversión Gas Natural/Envasado", desc: "Cambio seguro de sistema" },
               ].map((service, index) => (
                 <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 text-center">
                     <div className="flex items-center justify-center mb-3">
                       <Flame className="h-8 w-8 text-primary" />
                     </div>
