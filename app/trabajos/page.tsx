@@ -112,37 +112,37 @@ export default function TrabajosPage() {
           <div className="container mx-auto px-4 sm:px-6">
             <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
               <Button
-                variant={filter === "todos" ? "default" : "outline"}
+                variant="outline"
                 onClick={() => setFilter("todos")}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "todos" ? "bg-slate-600 text-white shadow-lg" : ""
+                  filter === "todos" ? "bg-slate-600 text-white shadow-lg border-0 hover:!bg-slate-600 hover:!text-white" : ""
                 }`}
               >
                 Todos los Trabajos
               </Button>
               <Button
-                variant={filter === "hidrojet" ? "default" : "outline"}
+                variant="outline"
                 onClick={() => setFilter("hidrojet")}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "hidrojet" ? "bg-accent text-accent-foreground shadow-lg" : ""
+                  filter === "hidrojet" ? "bg-accent text-accent-foreground shadow-lg border-0 hover:!bg-accent hover:!text-accent-foreground" : ""
                 }`}
               >
                 Hidro Jet
               </Button>
               <Button
-                variant={filter === "plomeria" ? "default" : "outline"}
+                variant="outline"
                 onClick={() => setFilter("plomeria")}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "plomeria" ? "bg-primary text-primary-foreground shadow-lg" : ""
+                  filter === "plomeria" ? "bg-primary text-primary-foreground shadow-lg border-0 hover:!bg-primary hover:!text-primary-foreground" : ""
                 }`}
               >
                 Plomería
               </Button>
               <Button
-                variant={filter === "gas" ? "default" : "outline"}
+                variant="outline"
                 onClick={() => setFilter("gas")}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "gas" ? "bg-red-500 text-white shadow-lg" : ""
+                  filter === "gas" ? "bg-red-500 text-white shadow-lg border-0 hover:!bg-red-500 hover:!text-white" : ""
                 }`}
               >
                 Gas

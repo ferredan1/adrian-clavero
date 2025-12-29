@@ -662,18 +662,42 @@ export default function HomePage() {
 
               <div className="flex flex-wrap justify-center gap-3">
                 {[
-                  { value: "all", label: "Todos", icon: null, color: "bg-slate-600 text-white" },
-                  { value: "plomeria", label: "Plomería", icon: Wrench, color: "bg-primary text-primary-foreground" },
-                  { value: "gas", label: "Gas", icon: Flame, color: "bg-red-500 text-white" },
-                  { value: "hidrojet", label: "Hidro Jet", icon: Droplets, color: "bg-accent text-accent-foreground" },
+                  { 
+                    value: "all", 
+                    label: "Todos", 
+                    icon: null, 
+                    color: "bg-slate-600 text-white",
+                    hoverColor: "hover:!bg-slate-600 hover:!text-white"
+                  },
+                  { 
+                    value: "plomeria", 
+                    label: "Plomería", 
+                    icon: Wrench, 
+                    color: "bg-primary text-primary-foreground",
+                    hoverColor: "hover:!bg-primary hover:!text-primary-foreground"
+                  },
+                  { 
+                    value: "gas", 
+                    label: "Gas", 
+                    icon: Flame, 
+                    color: "bg-red-500 text-white",
+                    hoverColor: "hover:!bg-red-500 hover:!text-white"
+                  },
+                  { 
+                    value: "hidrojet", 
+                    label: "Hidro Jet", 
+                    icon: Droplets, 
+                    color: "bg-accent text-accent-foreground",
+                    hoverColor: "hover:!bg-accent hover:!text-accent-foreground"
+                  },
                 ].map((filter) => (
                   <Button
                     key={filter.value}
-                    variant={portfolioFilter === filter.value ? "default" : "outline"}
+                    variant="outline"
                     onClick={() => setPortfolioFilter(filter.value)}
                     className={`transition-all duration-300 hover:scale-105 ${
                       portfolioFilter === filter.value
-                        ? `${filter.color} shadow-lg`
+                        ? `${filter.color} ${filter.hoverColor} shadow-lg border-0`
                         : "hover:border-accent/50"
                     }`}
                   >
