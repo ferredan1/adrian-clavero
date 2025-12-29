@@ -114,17 +114,18 @@ export default function TrabajosPage() {
               <Button
                 variant="outline"
                 onClick={() => setFilter("todos")}
+                data-filter-active={filter === "todos" ? "todos" : undefined}
                 style={filter === "todos" ? { backgroundColor: "#475569", color: "#ffffff" } : undefined}
                 onMouseEnter={(e) => {
                   if (filter === "todos") {
-                    e.currentTarget.style.backgroundColor = "#475569"
-                    e.currentTarget.style.color = "#ffffff"
+                    e.currentTarget.style.setProperty('background-color', '#475569', 'important')
+                    e.currentTarget.style.setProperty('color', '#ffffff', 'important')
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (filter === "todos") {
-                    e.currentTarget.style.backgroundColor = "#475569"
-                    e.currentTarget.style.color = "#ffffff"
+                    e.currentTarget.style.setProperty('background-color', '#475569', 'important')
+                    e.currentTarget.style.setProperty('color', '#ffffff', 'important')
                   }
                 }}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
@@ -136,17 +137,18 @@ export default function TrabajosPage() {
               <Button
                 variant="outline"
                 onClick={() => setFilter("hidrojet")}
+                data-filter-active={filter === "hidrojet" ? "hidrojet" : undefined}
                 style={filter === "hidrojet" ? { backgroundColor: "var(--color-accent)", color: "var(--color-accent-foreground)" } : undefined}
                 onMouseEnter={(e) => {
                   if (filter === "hidrojet") {
-                    e.currentTarget.style.backgroundColor = "var(--color-accent)"
-                    e.currentTarget.style.color = "var(--color-accent-foreground)"
+                    e.currentTarget.style.setProperty('background-color', 'var(--color-accent)', 'important')
+                    e.currentTarget.style.setProperty('color', 'var(--color-accent-foreground)', 'important')
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (filter === "hidrojet") {
-                    e.currentTarget.style.backgroundColor = "var(--color-accent)"
-                    e.currentTarget.style.color = "var(--color-accent-foreground)"
+                    e.currentTarget.style.setProperty('background-color', 'var(--color-accent)', 'important')
+                    e.currentTarget.style.setProperty('color', 'var(--color-accent-foreground)', 'important')
                   }
                 }}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
@@ -158,17 +160,18 @@ export default function TrabajosPage() {
               <Button
                 variant="outline"
                 onClick={() => setFilter("plomeria")}
+                data-filter-active={filter === "plomeria" ? "plomeria" : undefined}
                 style={filter === "plomeria" ? { backgroundColor: "var(--color-primary)", color: "var(--color-primary-foreground)" } : undefined}
                 onMouseEnter={(e) => {
                   if (filter === "plomeria") {
-                    e.currentTarget.style.backgroundColor = "var(--color-primary)"
-                    e.currentTarget.style.color = "var(--color-primary-foreground)"
+                    e.currentTarget.style.setProperty('background-color', 'var(--color-primary)', 'important')
+                    e.currentTarget.style.setProperty('color', 'var(--color-primary-foreground)', 'important')
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (filter === "plomeria") {
-                    e.currentTarget.style.backgroundColor = "var(--color-primary)"
-                    e.currentTarget.style.color = "var(--color-primary-foreground)"
+                    e.currentTarget.style.setProperty('background-color', 'var(--color-primary)', 'important')
+                    e.currentTarget.style.setProperty('color', 'var(--color-primary-foreground)', 'important')
                   }
                 }}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
@@ -180,17 +183,18 @@ export default function TrabajosPage() {
               <Button
                 variant="outline"
                 onClick={() => setFilter("gas")}
+                data-filter-active={filter === "gas" ? "gas" : undefined}
                 style={filter === "gas" ? { backgroundColor: "#ef4444", color: "#ffffff" } : undefined}
                 onMouseEnter={(e) => {
                   if (filter === "gas") {
-                    e.currentTarget.style.backgroundColor = "#ef4444"
-                    e.currentTarget.style.color = "#ffffff"
+                    e.currentTarget.style.setProperty('background-color', '#ef4444', 'important')
+                    e.currentTarget.style.setProperty('color', '#ffffff', 'important')
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (filter === "gas") {
-                    e.currentTarget.style.backgroundColor = "#ef4444"
-                    e.currentTarget.style.color = "#ffffff"
+                    e.currentTarget.style.setProperty('background-color', '#ef4444', 'important')
+                    e.currentTarget.style.setProperty('color', '#ffffff', 'important')
                   }
                 }}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${

@@ -711,17 +711,21 @@ export default function HomePage() {
                       key={filter.value}
                       variant="outline"
                       onClick={() => setPortfolioFilter(filter.value)}
+                      data-filter-active={portfolioFilter === filter.value ? filter.value : undefined}
+                      data-filter-color={portfolioFilter === filter.value ? filter.value : undefined}
                       style={getHoverStyle()}
                       onMouseEnter={(e) => {
                         if (portfolioFilter === filter.value) {
                           const style = getHoverStyle()
-                          Object.assign(e.currentTarget.style, style)
+                          e.currentTarget.style.setProperty('background-color', style.backgroundColor || '', 'important')
+                          e.currentTarget.style.setProperty('color', style.color || '', 'important')
                         }
                       }}
                       onMouseLeave={(e) => {
                         if (portfolioFilter === filter.value) {
                           const style = getHoverStyle()
-                          Object.assign(e.currentTarget.style, style)
+                          e.currentTarget.style.setProperty('background-color', style.backgroundColor || '', 'important')
+                          e.currentTarget.style.setProperty('color', style.color || '', 'important')
                         }
                       }}
                       className={`transition-all duration-300 hover:scale-105 ${
