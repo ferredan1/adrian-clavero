@@ -365,47 +365,72 @@ body {
 }
 
 /* Fix para mantener colores específicos en hover de botones de filtro */
-/* Selector más específico para sobrescribir el hover del componente Button */
+/* Desactivar completamente el hover naranja del componente Button */
+.no-hover-accent:hover {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+/* Mantener colores específicos en hover */
 button[data-filter-active="todos"]:hover,
-button[data-filter-active="all"]:hover {
+button[data-filter-active="all"]:hover,
+button[data-filter-active="todos"],
+button[data-filter-active="all"],
+button.no-hover-accent.bg-slate-600:hover,
+button.no-hover-accent.bg-slate-600 {
   background-color: #475569 !important;
   color: #ffffff !important;
 }
 
-button[data-filter-active="plomeria"]:hover {
+button[data-filter-active="plomeria"]:hover,
+button[data-filter-active="plomeria"],
+button.no-hover-accent.bg-primary:hover,
+button.no-hover-accent.bg-primary {
   background-color: var(--color-primary) !important;
   color: var(--color-primary-foreground) !important;
 }
 
-button[data-filter-active="gas"]:hover {
+button[data-filter-active="gas"]:hover,
+button[data-filter-active="gas"],
+button.no-hover-accent.bg-red-500:hover,
+button.no-hover-accent.bg-red-500 {
   background-color: #ef4444 !important;
   color: #ffffff !important;
 }
 
-button[data-filter-active="hidrojet"]:hover {
+button[data-filter-active="hidrojet"]:hover,
+button[data-filter-active="hidrojet"],
+button.no-hover-accent.bg-accent:hover,
+button.no-hover-accent.bg-accent {
   background-color: var(--color-accent) !important;
   color: var(--color-accent-foreground) !important;
 }
 
-/* Fallback para estilos inline */
+/* Fallback para estilos inline - mantener colores específicos */
 button[style*="background-color: #475569"]:hover,
-button[style*="background-color:#475569"]:hover {
+button[style*="background-color:#475569"]:hover,
+button[style*="background-color: #475569"],
+button[style*="background-color:#475569"] {
   background-color: #475569 !important;
   color: #ffffff !important;
 }
 
-button[style*="--color-primary"]:hover {
+button[style*="--color-primary"]:hover,
+button[style*="--color-primary"] {
   background-color: var(--color-primary) !important;
   color: var(--color-primary-foreground) !important;
 }
 
 button[style*="background-color: #ef4444"]:hover,
-button[style*="background-color:#ef4444"]:hover {
+button[style*="background-color:#ef4444"]:hover,
+button[style*="background-color: #ef4444"],
+button[style*="background-color:#ef4444"] {
   background-color: #ef4444 !important;
   color: #ffffff !important;
 }
 
-button[style*="--color-accent"]:hover {
+button[style*="--color-accent"]:hover,
+button[style*="--color-accent"] {
   background-color: var(--color-accent) !important;
   color: var(--color-accent-foreground) !important;
 }

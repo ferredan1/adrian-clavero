@@ -730,7 +730,7 @@ export default function HomePage() {
                       }}
                       className={`transition-all duration-300 hover:scale-105 ${
                         portfolioFilter === filter.value
-                          ? `${filter.color} shadow-lg border-0`
+                          ? `${filter.color} shadow-lg border-0 no-hover-accent`
                           : "hover:border-accent/50"
                       }`}
                     >

@@ -129,7 +129,7 @@ export default function TrabajosPage() {
                   }
                 }}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "todos" ? "shadow-lg border-0" : ""
+                  filter === "todos" ? "shadow-lg border-0 no-hover-accent" : ""
                 }`}
               >
                 Todos los Trabajos
@@ -152,7 +152,7 @@ export default function TrabajosPage() {
                   }
                 }}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "hidrojet" ? "shadow-lg border-0" : ""
+                  filter === "hidrojet" ? "shadow-lg border-0 no-hover-accent" : ""
                 }`}
               >
                 Hidro Jet
@@ -175,7 +175,7 @@ export default function TrabajosPage() {
                   }
                 }}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "plomeria" ? "shadow-lg border-0" : ""
+                  filter === "plomeria" ? "shadow-lg border-0 no-hover-accent" : ""
                 }`}
               >
                 Plomería
@@ -198,7 +198,7 @@ export default function TrabajosPage() {
                   }
                 }}
                 className={`min-h-[44px] px-4 sm:px-6 transition-all duration-300 ${
-                  filter === "gas" ? "shadow-lg border-0" : ""
+                  filter === "gas" ? "shadow-lg border-0 no-hover-accent" : ""
                 }`}
               >
                 Gas
