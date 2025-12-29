@@ -8,7 +8,7 @@ import { FilterButton } from "@/components/filter-button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
-import { Calendar, MapPin, CheckCircle2 } from "lucide-react"
+import { Calendar, MapPin, CheckCircle2, Wrench, Flame, Droplets } from "lucide-react"
 import { SharedFooter } from "@/components/shared-footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 
@@ -114,33 +114,36 @@ export default function TrabajosPage() {
                 onClick={() => setFilter("todos")}
                 isActive={filter === "todos"}
                 activeColor="slate"
-                className="min-h-[44px] px-4 sm:px-6"
+                className="min-h-[52px] px-6 sm:px-8 py-3 text-base"
               >
                 Todos los Trabajos
-              </FilterButton>
-              <FilterButton
-                onClick={() => setFilter("hidrojet")}
-                isActive={filter === "hidrojet"}
-                activeColor="accent"
-                className="min-h-[44px] px-4 sm:px-6"
-              >
-                Hidro Jet
               </FilterButton>
               <FilterButton
                 onClick={() => setFilter("plomeria")}
                 isActive={filter === "plomeria"}
                 activeColor="primary"
-                className="min-h-[44px] px-4 sm:px-6"
+                className="min-h-[52px] px-6 sm:px-8 py-3 text-base"
               >
+                <Wrench className="h-5 w-5 mr-2" />
                 Plomería
               </FilterButton>
               <FilterButton
                 onClick={() => setFilter("gas")}
                 isActive={filter === "gas"}
                 activeColor="red"
-                className="min-h-[44px] px-4 sm:px-6"
+                className="min-h-[52px] px-6 sm:px-8 py-3 text-base"
               >
+                <Flame className="h-5 w-5 mr-2" />
                 Gas
+              </FilterButton>
+              <FilterButton
+                onClick={() => setFilter("hidrojet")}
+                isActive={filter === "hidrojet"}
+                activeColor="accent"
+                className="min-h-[52px] px-6 sm:px-8 py-3 text-base"
+              >
+                <Droplets className="h-5 w-5 mr-2" />
+                Hidro Jet
               </FilterButton>
             </div>
           </div>
