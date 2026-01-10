@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button"
 
 export function FloatingWhatsApp() {
   const handleWhatsAppClick = () => {
-    const mensaje = "Hola Adrian, te consulto por..."
-    window.open("https://wa.me/5491154625634?text=" + encodeURIComponent(mensaje), "_blank")
+    const mensaje = "Hola, quiero cotizar productos para mi obra"
+    window.open("https://wa.me/5491120345160?text=" + encodeURIComponent(mensaje), "_blank")
   }
 
   return (

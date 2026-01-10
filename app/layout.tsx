@@ -4,36 +4,48 @@ import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script"
 import "./globals.css"
 
-const siteUrl = "https://adrianclavero.com"
+const siteUrl = "https://ferreteria-dany.vercel.app"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Adrián Clavero - Plomería y Gas Matriculado | Hidro Jet AMBA",
-    template: "%s | Adrián Clavero",
+    default: "Ferretería Dany - Materiales de Construcción, Herramientas y Más | CABA y GBA",
+    template: "%s | Ferretería Dany",
   },
   description:
-    "Plomero y Gasista Matriculado en Buenos Aires. Especialista en destapaciones con Hidro Jet. Atención rápida 24/7 en CABA y AMBA. Presupuestos sin cargo. Más de 15 años de experiencia.",
+    "Ferretería Dany: más de 30 años en CABA y GBA. Stock permanente, precios competitivos y asesoramiento personalizado. Materiales de construcción, herramientas, electricidad, plomería, pinturas y más. Envíos rápidos y 2 sucursales físicas.",
   keywords: [
-    "plomero",
-    "gasista",
-    "matriculado",
-    "hidro jet",
-    "destapaciones",
-    "Buenos Aires",
-    "CABA",
-    "AMBA",
-    "Villa Ballester",
-    "San Isidro",
-    "Vicente López",
-    "emergencias 24/7",
+    "ferretería",
+    "materiales de construcción",
+    "herramientas",
+    "ferretería CABA",
+    "ferretería Buenos Aires",
+    "ferretería GBA",
+    "herramientas eléctricas",
+    "herramientas manuales",
+    "materiales construcción",
+    "cemento",
+    "ladrillos",
+    "hierros",
+    "electricidad",
     "plomería",
-    "instalación de gas",
-    "reparación de cañerías",
+    "pinturas",
+    "fijaciones",
+    "herrajes",
+    "seguridad",
+    "jardín",
+    "exterior",
+    "accesorios vehículos",
+    "stock permanente",
+    "envíos rápidos",
+    "presupuestos",
+    "cotización",
+    "WhatsApp",
+    "tienda online",
   ],
-  authors: [{ name: "Adrián Clavero" }],
-  creator: "Adrián Clavero",
-  publisher: "Adrián Clavero",
+  authors: [{ name: "Ferretería Dany" }],
+  creator: "Ferretería Dany",
+  publisher: "Ferretería Dany",
   formatDetection: {
     email: false,
     address: false,
@@ -43,24 +55,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_AR",
     url: siteUrl,
-    siteName: "Adrián Clavero - Plomería y Gas",
-    title: "Adrián Clavero - Plomería y Gas Matriculado | Hidro Jet AMBA",
+    siteName: "Ferretería Dany",
+    title: "Ferretería Dany - Materiales de Construcción, Herramientas y Más | CABA y GBA",
     description:
-      "Plomero y Gasista Matriculado en Buenos Aires. Especialista en destapaciones con Hidro Jet. Atención rápida 24/7 en CABA y AMBA.",
+      "Más de 30 años en CABA y GBA. Stock permanente, precios competitivos y asesoramiento personalizado. Materiales de construcción, herramientas, electricidad, plomería, pinturas y más.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Adrián Clavero - Plomería y Gas Matriculado",
+        alt: "Ferretería Dany - Materiales de Construcción y Herramientas",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adrián Clavero - Plomería y Gas Matriculado | Hidro Jet AMBA",
+    title: "Ferretería Dany - Materiales de Construcción, Herramientas y Más | CABA y GBA",
     description:
-      "Plomero y Gasista Matriculado en Buenos Aires. Especialista en destapaciones con Hidro Jet. Atención rápida 24/7.",
+      "Más de 30 años en CABA y GBA. Stock permanente, precios competitivos y asesoramiento personalizado.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -104,70 +116,142 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Adrián Clavero - Plomería y Gas",
+    "@type": "HardwareStore",
+    name: "Ferretería Dany",
     image: `${siteUrl}/og-image.jpg`,
     "@id": siteUrl,
     url: siteUrl,
-    telephone: "+5491154625634",
-    email: "contacto@adrianclavero.com",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Belgrano 5746",
-      addressLocality: "Villa Ballester",
-      addressRegion: "Buenos Aires",
-      addressCountry: "AR",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: -34.5470788,
-      longitude: -58.5673942,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "00:00",
-      closes: "23:59",
-    },
+    telephone: "+5491120345160",
+    email: "ferreteria-dany@hotmail.com",
+    address: [
+      {
+        "@type": "PostalAddress",
+        addressLocality: "CABA",
+        addressRegion: "Buenos Aires",
+        addressCountry: "AR",
+      },
+      {
+        "@type": "PostalAddress",
+        addressLocality: "GBA",
+        addressRegion: "Buenos Aires",
+        addressCountry: "AR",
+      },
+    ],
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:00",
+        closes: "12:30",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "14:00",
+        closes: "18:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Saturday"],
+        opens: "08:00",
+        closes: "13:00",
+      },
+    ],
     priceRange: "$$",
     description:
-      "Plomero y Gasista Matriculado en Buenos Aires. Especialista en destapaciones con Hidro Jet. Atención rápida 24/7 en CABA y AMBA.",
+      "Ferretería Dany: más de 30 años en CABA y GBA. Stock permanente, precios competitivos y asesoramiento personalizado. Materiales de construcción, herramientas, electricidad, plomería, pinturas y más.",
     areaServed: [
-      "CABA",
-      "Vicente López",
-      "San Isidro",
-      "San Fernando",
-      "Tigre",
-      "San Martín",
-      "Tres de Febrero",
-      "Villa Ballester",
+      {
+        "@type": "City",
+        name: "CABA",
+      },
+      {
+        "@type": "City",
+        name: "Gran Buenos Aires",
+      },
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Servicios de Plomería y Gas",
+      name: "Productos de Ferretería",
       itemListElement: [
         {
           "@type": "Offer",
           itemOffered: {
-            "@type": "Service",
-            name: "Destapaciones con Hidro Jet",
-            description: "Sistema de limpieza profesional con agua a alta presión",
+            "@type": "Product",
+            name: "Materiales de construcción",
+            description: "Cemento, ladrillos, hierros, maderas y más",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
-            "@type": "Service",
-            name: "Plomería Integral",
-            description: "Reparación e instalación de sistemas de plomería",
+            "@type": "Product",
+            name: "Herramientas",
+            description: "Herramientas manuales y eléctricas para profesionales y particulares",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
-            "@type": "Service",
-            name: "Instalación de Gas",
-            description: "Gasista matriculado para instalación y reparación",
+            "@type": "Product",
+            name: "Electricidad",
+            description: "Cables, interruptores, llaves, portalámparas y más",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Product",
+            name: "Plomería y Sanitarios",
+            description: "Bombas, caños, conexiones, grifería, sanitarios y accesorios para instalaciones sanitarias",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Product",
+            name: "Pinturas y Acabados",
+            description: "Pinturas látex, esmaltes, impermeabilizantes, barnices y preparación de superficies",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Product",
+            name: "Fijaciones y Herrajes",
+            description: "Tornillos, clavos, bulones, bisagras, cerraduras y herrajes para construcción",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Product",
+            name: "Seguridad Laboral",
+            description: "Equipos de protección personal, guantes, cascos y elementos de seguridad para obras",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Product",
+            name: "Accesorios para Vehículos",
+            description: "Herramientas para baterías, elevación, extracción, infladores y lubricantes para vehículos",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Product",
+            name: "Jardín y Exterior",
+            description: "Mangueras, regaderas, herramientas de jardín y más",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Product",
+            name: "Accesorios para Vehículos",
+            description: "Productos para el mantenimiento y cuidado de vehículos",
           },
         },
       ],
@@ -181,7 +265,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
         <Script

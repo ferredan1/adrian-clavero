@@ -5,43 +5,56 @@ import Link from "next/link"
 
 export function TopBanner() {
   return (
-    <div className="bg-primary text-primary-foreground border-b border-primary/20">
+    <div className="bg-gray-900 text-white border-b border-gray-800">
       <div className="container mx-auto px-3 sm:px-4 md:px-6">
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 py-2 sm:py-2.5 text-xs sm:text-sm">
-          {/* Dirección */}
-          <Link
-            href="https://www.google.com/maps/place/Adrian+Destapaciones/@-34.5470784,-58.5776939,15z/data=!3m1!4b1!4m6!3m5!1s0x95bcbb63a09411fd:0xe14e47144e53ccda!8m2!3d-34.5470788!4d-58.5673942!16s%2Fg%2F11jzjh1yf1?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 sm:gap-2 hover:text-accent transition-colors"
-          >
-            <MapPin className="h-3.5 w-3.5 sm:h-4 sm:w-4 flex-shrink-0" />
-            <span className="whitespace-nowrap">Belgrano 5746, Villa Ballester</span>
-          </Link>
-
-          {/* Separador */}
-          <span className="hidden sm:inline text-primary-foreground/40">|</span>
-
-          {/* Email */}
-          <Link
-            href="mailto:contacto@adrianclavero.com"
-            className="flex items-center gap-1.5 sm:gap-2 hover:text-accent transition-colors"
-          >
-            <Mail className="h-3.5 w-3.5 sm:h-4 sm:w-4 flex-shrink-0" />
-            <span className="hidden sm:inline">contacto@adrianclavero.com</span>
-            <span className="sm:hidden">Email</span>
-          </Link>
-
-          {/* Separador */}
-          <span className="hidden md:inline text-primary-foreground/40">|</span>
-
-          {/* Redes Sociales */}
-          <div className="flex items-center gap-3 sm:gap-4">
+        <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4 md:gap-6 py-2 sm:py-2.5 text-xs sm:text-sm">
+          {/* Left side - Locations */}
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6">
+            {/* CASA CENTRAL */}
             <Link
-              href="https://www.instagram.com/destapacionesadrianclavero/"
+              href="https://maps.app.goo.gl/j1r7vBfPBVvvzZoM7"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-accent transition-colors flex items-center gap-1.5"
+              className="flex items-center gap-1.5 sm:gap-2 hover:text-[#c62828] transition-colors"
+            >
+              <MapPin className="h-3.5 w-3.5 sm:h-4 sm:w-4 flex-shrink-0" />
+              <span className="whitespace-nowrap">CASA CENTRAL</span>
+            </Link>
+
+            {/* Separador */}
+            <span className="hidden sm:inline text-gray-600">|</span>
+
+            {/* Sucursal */}
+            <Link
+              href="https://maps.app.goo.gl/pDaFAigma7ReP8Fi6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 sm:gap-2 hover:text-[#c62828] transition-colors"
+            >
+              <MapPin className="h-3.5 w-3.5 sm:h-4 sm:w-4 flex-shrink-0" />
+              <span className="whitespace-nowrap">Sucursal</span>
+            </Link>
+          </div>
+
+          {/* Center - Email */}
+          <div className="flex-1 flex justify-center">
+            <Link
+              href="mailto:ferreteria-dany@hotmail.com"
+              className="flex items-center gap-1.5 sm:gap-2 hover:text-[#c62828] transition-colors"
+            >
+              <Mail className="h-3.5 w-3.5 sm:h-4 sm:w-4 flex-shrink-0" />
+              <span className="hidden sm:inline whitespace-nowrap">ferreteria-dany@hotmail.com</span>
+              <span className="sm:hidden whitespace-nowrap">Email</span>
+            </Link>
+          </div>
+
+          {/* Right side - Social Media */}
+          <div className="flex items-center gap-3 sm:gap-4">
+            <Link
+              href="https://www.instagram.com/ferreteriadany"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#c62828] transition-colors flex items-center gap-1.5"
               aria-label="Instagram"
             >
               <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -50,10 +63,10 @@ export function TopBanner() {
               <span className="hidden lg:inline text-xs">Instagram</span>
             </Link>
             <Link
-              href="https://www.facebook.com/adrian.clavero.161"
+              href="https://www.facebook.com/ferreteriadany"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-accent transition-colors flex items-center gap-1.5"
+              className="hover:text-[#c62828] transition-colors flex items-center gap-1.5"
               aria-label="Facebook"
             >
               <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -67,4 +80,3 @@ export function TopBanner() {
     </div>
   )
 }
-

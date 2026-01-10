@@ -4,31 +4,32 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.99 0.005 240);
-  --foreground: oklch(0.15 0.02 240);
-  --card: oklch(1 0 0);
+  /* Industrial Minimalist Color Palette */
+  --background: oklch(0.99 0.005 240); /* Blanco/gris muy claro */
+  --foreground: oklch(0.15 0.02 240); /* Negro/gris oscuro */
+  --card: oklch(1 0 0); /* Blanco puro */
   --card-foreground: oklch(0.15 0.02 240);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0.02 240);
-  --primary: oklch(0.25 0.08 240);
+  --primary: oklch(0.15 0.02 240); /* Negro/gris oscuro para títulos */
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.96 0.01 240);
+  --secondary: oklch(0.96 0.01 240); /* Gris muy claro */
   --secondary-foreground: oklch(0.25 0.08 240);
   --muted: oklch(0.96 0.01 240);
   --muted-foreground: oklch(0.55 0.02 240);
-  --accent: oklch(0.65 0.18 45);
+  --accent: oklch(0.45 0.18 25); /* Rojo #c62828 */
   --accent-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.9 0.01 240);
+  --border: oklch(0.9 0.01 240); /* Bordes suaves */
   --input: oklch(0.9 0.01 240);
-  --ring: oklch(0.25 0.08 240);
+  --ring: oklch(0.45 0.18 25); /* Ring color rojo */
   --chart-1: oklch(0.25 0.08 240);
   --chart-2: oklch(0.65 0.18 45);
   --chart-3: oklch(0.55 0.02 240);
   --chart-4: oklch(0.45 0.12 240);
   --chart-5: oklch(0.75 0.15 50);
-  --radius: 0.625rem;
+  --radius: 0.5rem; /* Bordes suaves */
   --sidebar: oklch(0.99 0 0);
   --sidebar-foreground: oklch(0.15 0.02 240);
   --sidebar-primary: oklch(0.25 0.08 240);
@@ -75,7 +76,7 @@
 }
 
 @theme inline {
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Inter", "Plus Jakarta Sans", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: "Inter", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);

@@ -18,11 +18,11 @@ export function SharedHeader() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const whatsappNumber = "+5491154625634"
-  const phoneNumber = "+54 9 11 5462-5634"
+  const whatsappNumber = "+5491120345160"
+  const phoneNumber = "+54 9 11 2034-5160"
 
   const handleWhatsAppClick = () => {
-    const mensaje = "Hola Adrian, te consulto por ..."
+    const mensaje = "Hola, quiero cotizar productos para mi obra"
     window.open(`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(mensaje)}`, "_blank")
   }
 
@@ -37,71 +37,61 @@ export function SharedHeader() {
         className={`sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 transition-all duration-300 ${isScrolled ? "shadow-lg" : ""}`}
       >
         <div className="container mx-auto px-3 sm:px-4 md:px-6">
-        <div className="flex h-14 sm:h-16 items-center justify-between">
+        <div className="flex h-14 sm:h-16 items-center">
           <Link
             href="/"
-            className="text-base sm:text-lg md:text-xl font-bold text-primary hover:text-primary/80 transition-colors truncate max-w-[150px] sm:max-w-none"
+            className="text-base sm:text-lg md:text-xl font-bold text-primary hover:text-primary/80 transition-colors"
+            aria-label="Ferretería Dany - Inicio"
           >
-            AC | Adrián Clavero
+            FERRETERÍA <span className="text-[#c62828]">DANY</span>
           </Link>
 
-          {/* Desktop Menu */}
-          <nav className="hidden items-center gap-4 xl:gap-6 lg:flex" aria-label="Navegación principal">
+          {/* Desktop Menu - Centered */}
+          <nav className="hidden items-center gap-4 xl:gap-5 lg:flex flex-1 justify-center" aria-label="Navegación principal">
             <Link
-              href="/servicios"
-              className="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap"
-              aria-label="Ver servicios de plomería y gas"
+              href="#servicios"
+              className="text-sm font-medium hover:text-[#c62828] transition-colors whitespace-nowrap"
+              aria-label="Ver servicios"
             >
               SERVICIOS
             </Link>
             <Link
-              href="/trabajos"
-              className="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap"
-              aria-label="Ver trabajos realizados"
+              href="https://ferreteriadany.com.ar/"
+              target="_blank"
+              className="text-sm font-medium hover:text-[#c62828] transition-colors whitespace-nowrap"
+              aria-label="Tienda Online"
             >
-              CLIENTES
+              TIENDA ONLINE
             </Link>
             <Link
-              href="/zonas"
-              className="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap"
-              aria-label="Ver zonas de cobertura"
+              href="#nosotros"
+              className="text-sm font-medium hover:text-[#c62828] transition-colors whitespace-nowrap"
+              aria-label="Quiénes somos"
             >
-              ZONAS
+              NOSOTROS
             </Link>
             <Link
-              href="/preguntas"
-              className="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap"
-              aria-label="Ver preguntas frecuentes"
+              href="#opiniones"
+              className="text-sm font-medium hover:text-[#c62828] transition-colors whitespace-nowrap"
+              aria-label="Opiniones"
             >
-              PREGUNTAS
+              OPINIONES
             </Link>
             <Link
-              href="/contacto"
-              className="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap"
-              aria-label="Contactar con Adrián Clavero"
+              href="#faq"
+              className="text-sm font-medium hover:text-[#c62828] transition-colors whitespace-nowrap"
+              aria-label="FAQ"
+            >
+              FAQ
+            </Link>
+            <Link
+              href="#contacto"
+              className="text-sm font-medium hover:text-[#c62828] transition-colors whitespace-nowrap"
+              aria-label="Contacto"
             >
               CONTACTO
             </Link>
           </nav>
-
-          <div className="hidden items-center gap-2 lg:flex">
-            <Button
-              onClick={handleWhatsAppClick}
-              className="gap-2 text-sm px-4 py-2 bg-green-600 hover:bg-green-700 text-white"
-              aria-label="Contactar por WhatsApp"
-            >
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              WhatsApp
-            </Button>
-            <Button
-              onClick={handleCallClick}
-              className="gap-2 bg-black hover:bg-black/90 text-white text-sm px-4 py-2"
-              aria-label="Llamar por teléfono"
-            >
-              <Phone className="h-4 w-4" aria-hidden="true" />
-              Llamar
-            </Button>
-          </div>
 
           <button
             className="lg:hidden p-2 -mr-2 hover:bg-accent/10 rounded-md transition-colors"
@@ -116,58 +106,48 @@ export function SharedHeader() {
           <div className="border-t border-border py-4 lg:hidden animate-fade-in-down">
             <nav className="flex flex-col gap-3" aria-label="Menú móvil">
               <Link
-                href="/servicios"
-                className="text-sm font-medium hover:text-primary transition-colors py-2 px-3 rounded-md hover:bg-accent/10"
+                href="#servicios"
+                className="text-sm font-medium hover:text-[#c62828] transition-colors py-2 px-3 rounded-md hover:bg-gray-100"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 SERVICIOS
               </Link>
               <Link
-                href="/trabajos"
-                className="text-sm font-medium hover:text-primary transition-colors py-2 px-3 rounded-md hover:bg-accent/10"
+                href="https://ferreteriadany.com.ar/"
+                target="_blank"
+                className="text-sm font-medium hover:text-[#c62828] transition-colors py-2 px-3 rounded-md hover:bg-gray-100"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                CLIENTES
+                TIENDA ONLINE
               </Link>
               <Link
-                href="/zonas"
-                className="text-sm font-medium hover:text-primary transition-colors py-2 px-3 rounded-md hover:bg-accent/10"
+                href="#nosotros"
+                className="text-sm font-medium hover:text-[#c62828] transition-colors py-2 px-3 rounded-md hover:bg-gray-100"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                ZONAS
+                NOSOTROS
               </Link>
               <Link
-                href="/preguntas"
-                className="text-sm font-medium hover:text-primary transition-colors py-2 px-3 rounded-md hover:bg-accent/10"
+                href="#opiniones"
+                className="text-sm font-medium hover:text-[#c62828] transition-colors py-2 px-3 rounded-md hover:bg-gray-100"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                PREGUNTAS
+                OPINIONES
               </Link>
               <Link
-                href="/contacto"
-                className="text-sm font-medium hover:text-primary transition-colors py-2 px-3 rounded-md hover:bg-accent/10"
+                href="#faq"
+                className="text-sm font-medium hover:text-[#c62828] transition-colors py-2 px-3 rounded-md hover:bg-gray-100"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                FAQ
+              </Link>
+              <Link
+                href="#contacto"
+                className="text-sm font-medium hover:text-[#c62828] transition-colors py-2 px-3 rounded-md hover:bg-gray-100"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 CONTACTO
               </Link>
-              <div className="flex flex-col gap-2 pt-2 mt-2 border-t border-border">
-                <Button
-                  onClick={handleWhatsAppClick}
-                  className="w-full gap-2 h-11 bg-green-600 hover:bg-green-700 text-white"
-                  size="lg"
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  WhatsApp
-                </Button>
-                <Button
-                  onClick={handleCallClick}
-                  className="w-full gap-2 bg-black hover:bg-black/90 text-white h-11"
-                  size="lg"
-                >
-                  <Phone className="h-4 w-4" />
-                  Llamar
-                </Button>
-              </div>
             </nav>
           </div>
         )}
