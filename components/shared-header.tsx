@@ -48,6 +48,13 @@ export function SharedHeader() {
           {/* Desktop Menu */}
           <nav className="hidden items-center gap-4 xl:gap-6 lg:flex" aria-label="Navegación principal">
             <Link
+              href="/"
+              className="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap"
+              aria-label="Ir al inicio"
+            >
+              INICIO
+            </Link>
+            <Link
               href="/servicios"
               className="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap"
               aria-label="Ver servicios de plomería y gas"
@@ -115,6 +122,13 @@ export function SharedHeader() {
         {mobileMenuOpen && (
           <div className="border-t border-border py-4 lg:hidden animate-fade-in-down">
             <nav className="flex flex-col gap-3" aria-label="Menú móvil">
+              <Link
+                href="/"
+                className="text-sm font-medium hover:text-primary transition-colors py-2 px-3 rounded-md hover:bg-accent/10"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                INICIO
+              </Link>
               <Link
                 href="/servicios"
                 className="text-sm font-medium hover:text-primary transition-colors py-2 px-3 rounded-md hover:bg-accent/10"
