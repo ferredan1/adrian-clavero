@@ -340,6 +340,41 @@ export default function HomePage() {
     "Villa Bosch",
   ]
 
+  const visibleZones = zones.slice(0, 9)
+
+  const whyItems = [
+    {
+      icon: MapPin,
+      title: "Llegamos Rápido",
+      description: "Servicio en toda CABA y zona norte. Atención de emergencias 24/7.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Puntualidad",
+      description: "Respetamos tu tiempo. Coordinamos horarios que se adaptan a tu agenda.",
+    },
+    {
+      icon: Shield,
+      title: "Garantía",
+      description: "Todos nuestros trabajos incluyen garantía y seguimiento post-servicio.",
+    },
+    {
+      icon: Wrench,
+      title: "Equipamiento",
+      description: "Tecnología de punta: Hidro Jet, cámaras de inspección y herramientas modernas.",
+    },
+    {
+      icon: Award,
+      title: "Matriculado",
+      description: "Gasista matriculado. Certificaciones oficiales en todos los trabajos.",
+    },
+    {
+      icon: CreditCard,
+      title: "Facilidades",
+      description: "Múltiples formas de pago. Planes de financiación para trabajos grandes.",
+    },
+  ]
+
   const filteredPortfolio =
     portfolioFilter === "all" ? portfolioItems : portfolioItems.filter((item) => item.category === portfolioFilter)
 
@@ -814,39 +849,29 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-container">
-              {[
-                {
-                  icon: MapPin,
-                  title: "Llegamos Rápido",
-                  description: "Servicio en toda CABA y zona norte. Atención de emergencias 24/7.",
-                },
-                {
-                  icon: CheckCircle,
-                  title: "Puntualidad",
-                  description: "Respetamos tu tiempo. Coordinamos horarios que se adaptan a tu agenda.",
-                },
-                {
-                  icon: Shield,
-                  title: "Garantía",
-                  description: "Todos nuestros trabajos incluyen garantía y seguimiento post-servicio.",
-                },
-                {
-                  icon: Wrench,
-                  title: "Equipamiento",
-                  description: "Tecnología de punta: Hidro Jet, cámaras de inspección y herramientas modernas.",
-                },
-                {
-                  icon: Award,
-                  title: "Matriculado",
-                  description: "Gasista matriculado. Certificaciones oficiales en todos los trabajos.",
-                },
-                {
-                  icon: CreditCard,
-                  title: "Facilidades",
-                  description: "Múltiples formas de pago. Planes de financiación para trabajos grandes.",
-                },
-              ].map((item, index) => (
+            {/* Carrusel horizontal en mobile */}
+            <div className="-mx-4 md:hidden">
+              <div className="flex gap-4 px-4 overflow-x-auto snap-x snap-mandatory pb-2">
+                {whyItems.map((item, index) => (
+                  <Card
+                    key={index}
+                    className="min-w-[80%] snap-start hover:shadow-2xl transition-all duration-500 hover:scale-105 group border-slate-200"
+                  >
+                    <CardContent className="p-6 flex flex-col items-center text-center">
+                      <div className="flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <item.icon className="h-8 w-8 text-primary transition-colors duration-300" />
+                      </div>
+                      <h3 className="text-xl font-bold mb-2 text-primary">{item.title}</h3>
+                      <p className="text-muted-foreground">{item.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Grilla en desktop/tablet */}
+            <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-container">
+              {whyItems.map((item, index) => (
                 <Card
                   key={index}
                   className="stagger-item opacity-0 hover:shadow-2xl transition-all duration-500 hover:scale-105 group border-slate-200"
@@ -906,9 +931,33 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="max-w-5xl mx-auto animate-on-scroll opacity-0" data-animation="fade-in-up">
+            <div className="max-w-5xl mx-auto animate-on-scroll opacity-0 space-y-8 sm:space-y-10" data-animation="fade-in-up">
+              {/* Mapa ilustrativo de cobertura */}
+              <div className="relative h-64 sm:h-72 md:h-80 rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-200">
+                <Image
+                  src="/buenos-aires.jpg"
+                  alt="Mapa de cobertura de CABA y Zona Norte del Gran Buenos Aires"
+                  fill
+                  className="object-cover opacity-80"
+                  sizes="(max-width: 768px) 100vw, 800px"
+                />
+                <div className="pointer-events-none absolute inset-0">
+                  {/* Círculo aproximado para CABA */}
+                  <div className="absolute top-10 left-8 w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-primary/25 blur-2xl" />
+                  {/* Círculo aproximado para Zona Norte GBA */}
+                  <div className="absolute bottom-8 right-10 w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-primary/25 blur-2xl" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 text-center">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white drop-shadow-lg">
+                    Cobertura en CABA y Zona Norte del Gran Buenos Aires
+                  </h3>
+                </div>
+              </div>
+
+              {/* Listado resumido de zonas */}
               <div className="grid gap-2 sm:gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                {zones.map((zone, index) => (
+                {visibleZones.map((zone, index) => (
                   <div
                     key={index}
                     className="flex items-center gap-2 sm:gap-3 rounded-lg border-2 border-border bg-card/80 backdrop-blur-sm p-3 sm:p-4 hover:bg-accent/10 hover:border-accent/50 hover:scale-105 transition-all duration-300 group"
@@ -921,6 +970,15 @@ export default function HomePage() {
                     </span>
                   </div>
                 ))}
+              </div>
+
+              <div className="text-center">
+                <Link
+                  href="/zonas"
+                  className="inline-flex items-center justify-center px-4 py-2 text-sm sm:text-base font-semibold text-primary hover:text-accent transition-colors"
+                >
+                  Ver todas las zonas de cobertura
+                </Link>
               </div>
             </div>
           </div>

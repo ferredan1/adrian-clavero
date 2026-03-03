@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { SharedHeader } from "@/components/shared-header"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { SharedFooter } from "@/components/shared-footer"
@@ -59,6 +60,12 @@ export default function ZonasPage() {
     "Villa Bosch",
   ]
 
+  const [showAllCABA, setShowAllCABA] = useState(false)
+  const [showAllGBA, setShowAllGBA] = useState(false)
+
+  const visibleZonasCABA = showAllCABA ? zonasCABA : zonasCABA.slice(0, 10)
+  const visibleZonasGBA = showAllGBA ? zonasGBA : zonasGBA.slice(0, 10)
+
   return (
     <div className="min-h-screen bg-background">
       <SharedHeader />
@@ -89,11 +96,21 @@ export default function ZonasPage() {
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-5xl mx-auto">
               <div className="relative h-72 sm:h-80 md:h-[28rem] rounded-3xl overflow-hidden shadow-2xl mb-8 sm:mb-12 border-4 border-white">
-                <Image src="/buenos-aires.jpg" alt="Mapa de Buenos Aires" fill className="object-cover opacity-80" />
+                <Image
+                  src="/buenos-aires.jpg"
+                  alt="Mapa de cobertura de CABA y Zona Norte del Gran Buenos Aires"
+                  fill
+                  className="object-cover opacity-80"
+                />
+                {/* Zonas de cobertura aproximadas */}
+                <div className="pointer-events-none absolute inset-0">
+                  <div className="absolute inset-y-10 left-4 right-1/2 rounded-full bg-primary/20 blur-2xl" />
+                  <div className="absolute inset-y-10 left-1/2 right-4 rounded-full bg-primary/20 blur-2xl" />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 text-center">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white drop-shadow-lg">
-                    Atendemos toda el Área Metropolitana de Buenos Aires
+                    Mapa de cobertura: CABA y Zona Norte del Gran Buenos Aires
                   </h2>
                 </div>
               </div>
@@ -116,14 +133,32 @@ export default function ZonasPage() {
                       <p className="text-sm text-muted-foreground">Todos los barrios</p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    {zonasCABA.map((zona) => (
+                  <div className="grid grid-cols-2 gap-3 mb-4">
+                    {visibleZonasCABA.map((zona) => (
                       <div key={zona} className="flex items-center gap-2 text-sm">
                         <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
                         <span>{zona}</span>
                       </div>
                     ))}
                   </div>
+                  {!showAllCABA && zonasCABA.length > visibleZonasCABA.length && (
+                    <button
+                      type="button"
+                      onClick={() => setShowAllCABA(true)}
+                      className="mt-2 text-xs sm:text-sm font-medium text-primary hover:underline"
+                    >
+                      Ver todas las zonas de CABA
+                    </button>
+                  )}
+                  {showAllCABA && (
+                    <button
+                      type="button"
+                      onClick={() => setShowAllCABA(false)}
+                      className="mt-2 text-xs sm:text-sm font-medium text-primary hover:underline"
+                    >
+                      Ver menos
+                    </button>
+                  )}
                 </Card>
 
                 <Card className="p-8 sm:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 border-slate-200">
@@ -136,14 +171,32 @@ export default function ZonasPage() {
                       <p className="text-sm text-muted-foreground">Principales localidades</p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    {zonasGBA.map((zona) => (
+                  <div className="grid grid-cols-2 gap-3 mb-4">
+                    {visibleZonasGBA.map((zona) => (
                       <div key={zona} className="flex items-center gap-2 text-sm">
                         <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
                         <span>{zona}</span>
                       </div>
                     ))}
                   </div>
+                  {!showAllGBA && zonasGBA.length > visibleZonasGBA.length && (
+                    <button
+                      type="button"
+                      onClick={() => setShowAllGBA(true)}
+                      className="mt-2 text-xs sm:text-sm font-medium text-primary hover:underline"
+                    >
+                      Ver todas las zonas de GBA Norte
+                    </button>
+                  )}
+                  {showAllGBA && (
+                    <button
+                      type="button"
+                      onClick={() => setShowAllGBA(false)}
+                      className="mt-2 text-xs sm:text-sm font-medium text-primary hover:underline"
+                    >
+                      Ver menos
+                    </button>
+                  )}
                 </Card>
               </div>
             </div>
